@@ -11,17 +11,26 @@ public class task3 {
         String name = "Ann";
         int nameToNumber = Arrays.asList(ownerNames).indexOf(name);
         int balance = balances[nameToNumber];
-        withdraw(balance,name,withdrawAmount);
-
+        int check = withdraw(balance,name,withdrawAmount);
+        if(check!=-1) balances[nameToNumber] = check;
     }
 
-    static void withdraw(int balance, String name, int withdraw)
+    static int withdraw(int balance, String name, int withdraw)
     {
-        double percent = 5;
-        double comission = (withdraw * percent) / 100;
-        double result = balance - withdraw - comission;
+        int percent = 5;
+        int comission = (withdraw * percent) / 100;
+        int result = balance - withdraw - comission;
 
-        if (result >= 0) System.out.println(name + " " + withdraw + " " + result);
-        else System.out.println(name + " NO");
-    }
+        if (result >= 0) {
+
+            System.out.println(name + " " + withdraw + " " + result);
+            return result;
+        }
+        else {
+            System.out.println(name + " NO");
+            return -1;
+        }
+        }
+
+
 }
