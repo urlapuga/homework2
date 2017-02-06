@@ -12,8 +12,8 @@ public class task1 {
         System.out.println("Минимальный " + min(myArray));
         System.out.println("Максимальный " + max1 );
         System.out.println("Максимальный Позитивный " + maxPositive(myArray));
-        System.out.println("Модуль первого - " + modulus(myArray));
-        System.out.println("Модуль последнего - " + modulusLast(myArray));
+        System.out.println("Модуль первого - " + modulus(myArray[0]));
+        System.out.println("Модуль последнего - " + modulus(myArray[myArray.length - 1]));
         System.out.println("Второй по величине элемент  - " + secondLargest(myArray,max1));
     }
 
@@ -49,26 +49,16 @@ public class task1 {
         return multiplication;
     }
 
-    static double modulus(double arr[]) {
-        int modulus = 1;
-        for (int i = 1; i < arr[0]; i++) modulus*=i;
-        return modulus;
+    static double modulus(double value) {
+        if(value<0)value=-value;
+        return value;
     }
-
-    static double modulusLast(double arr[]) {
-        int modulus = 1;
-        for (int i = 1; i < arr[arr.length-1]; i++) modulus*=i;
-        return modulus;
-    }
-
 
     static double secondLargest(double arr[],double max1) {
         double max = arr[0];
         for (int i = 0; i < arr.length; i++) if (max < arr[i] && arr[i]!=max1) max = arr[i];
         return max;
     }
-
-
 
 
 }
