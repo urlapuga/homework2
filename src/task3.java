@@ -9,18 +9,15 @@ public class task3 {
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
         int withdrawAmount = 100;
         String name = "Ann";
-        int[] check = withdrawArrayed(balances, ownerNames, withdrawAmount,name);
-         if ( check[0]!= -1) balances[check[1]] = check[0];
+        withdrawArrayed(balances, ownerNames, withdrawAmount,name);
+     }
 
-    }
-
-    static int[] withdrawArrayed(int[] balances, String[] ownerNames, int withdraw, String name) {
+    static void withdrawArrayed(int[] balances, String[] ownerNames, int withdraw, String name) {
         int percent = 5;
 
         int nameToNumber = Arrays.asList(ownerNames).indexOf(name);
         if (nameToNumber == -1) {
             System.out.println("Не найдено пользователя с таким именем");
-            return new int[]{-1, -1};
         }
         else {
             int balance = balances[nameToNumber];
@@ -28,10 +25,9 @@ public class task3 {
             int result = balance - withdraw - comission;
             if (result >= 0) {
                 System.out.println(name + " " + withdraw + " " + result);
-                return new int[] {result,nameToNumber};
+                balances[nameToNumber] = result;
             } else {
                 System.out.println(name + " NO");
-                return new int[]{-1, -1};
             }
         }
 
