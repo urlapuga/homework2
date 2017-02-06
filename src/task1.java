@@ -39,6 +39,9 @@ public class task1 {
 
         System.out.println("Мультипликация  - " + multiplication(myArray));
         System.out.println("Мультипликация ИНТ- " + multiplication(myIntArray));
+
+        System.out.println("Модуль с массивом  " + modulusArr(myArray)[0]+" "+modulusArr(myArray)[1]);
+        System.out.println("Модуль с массивом ИНТ " + modulusArr(myIntArray)[0]+" "+modulusArr(myIntArray)[1]);
     }
 
     static int sum(int arr[]) {
@@ -103,6 +106,20 @@ public class task1 {
         int multiplication = 1;
         for (int i = 0; i < arr.length; i++) multiplication*=arr[i];
         return multiplication;
+    }
+
+    static double[] modulusArr(double[] arr) {
+        double[] returnArr = {0,0};
+        returnArr[0] = Math.abs(arr[0]);
+        returnArr[1] = Math.abs(arr[arr.length-1]);
+        return returnArr;
+    }
+
+    static int[] modulusArr(int[] arr) {
+        int[] returnArr = {0,0};
+        returnArr[0] = Math.abs(arr[0]);
+        returnArr[1] = Math.abs(arr[arr.length-1]);
+        return returnArr;
     }
 
     static double modulus(double value) {
