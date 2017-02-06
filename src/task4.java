@@ -12,10 +12,12 @@ public class task4 {
 
         String ownerName = "Oww";
         int nameToNumber = Arrays.asList(ownerNames).indexOf(ownerName);
-
-        double fund = 100;
-        balances[nameToNumber]+=fund;
-        System.out.println(ownerName + " " + balances[nameToNumber]);
+        if (nameToNumber == -1) System.out.println("Пользователь не найден");
+        else {
+            double fund = 100;
+            balances[nameToNumber] += fund;
+            System.out.println(ownerName + " " + balances[nameToNumber]);
+        }
     }
 
 }
