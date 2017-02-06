@@ -69,8 +69,7 @@ public class task1 {
         return min;
     }
 
-
-    public static double max(double arr[]) {
+    static double max(double arr[]) {
         double max = arr[0];
         for (int i = 0; i < arr.length; i++) if (max < arr[i]) max = arr[i];
         return max;
@@ -93,7 +92,6 @@ public class task1 {
         for (int i = 0; i < arr.length; i++) if (maxPositive < arr[i] && arr[i]>0) maxPositive = arr[i];
         return maxPositive;
     }
-
 
     static double multiplication(double arr[]) {
         double multiplication = 1;
