@@ -9,10 +9,10 @@ public class task3 {
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
         int withdrawAmount = 100;
         String name = "Ann";
-        withdrawArrayed(balances, ownerNames, withdrawAmount,name);
+        withdraw(balances, ownerNames, withdrawAmount,name);
      }
 
-    static void withdrawArrayed(int[] balances, String[] ownerNames, int withdraw, String name) {
+    static void withdraw(int[] balances, String[] ownerNames, int withdraw, String name) {
         int percent = 5;
 
         int nameToNumber = Arrays.asList(ownerNames).indexOf(name);
